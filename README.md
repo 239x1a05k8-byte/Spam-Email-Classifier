@@ -1,6 +1,6 @@
 # 📩 Spam Email Classifier
 
-A Machine Learning web app that classifies emails as **Spam or Ham** using NLP.
+A Machine Learning web app that classifies emails as **Spam or Ham** using NLP and TF-IDF.
 
 ---
 
@@ -15,11 +15,12 @@ A Machine Learning web app that classifies emails as **Spam or Ham** using NLP.
 ---
 
 ## ⚙️ Tech Stack
-- Python 🐍  
-- Streamlit 🎈  
-- Scikit-learn 🤖  
-- Pandas 📊  
-- NLP (TF-IDF)
+- Python 🐍
+- Streamlit 🎈
+- Scikit-learn 🤖
+- Pandas 📊
+- NumPy 🔢
+- NLP (TF-IDF Vectorizer)
 
 ---
 
@@ -32,12 +33,13 @@ A Machine Learning web app that classifies emails as **Spam or Ham** using NLP.
 ## 📌 Features
 - Enter email text
 - Predict Spam or Ham
+- Real-time ML inference
 - Simple UI
-- Real-time inference
 
 ---
 
 ## 🚀 How to Run Locally
+
 ```bash
 pip install -r requirements.txt
 streamlit run src/app.py
