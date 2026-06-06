@@ -1,17 +1,21 @@
 import streamlit as st
-import pickle
+import joblib
 import os
 
-# correct model path (works in Streamlit Cloud + local)
+# Path works locally + Streamlit Cloud
 BASE_DIR = os.path.dirname(__file__)
 MODEL_PATH = os.path.join(BASE_DIR, "..", "models", "spam_model.pkl")
-
-with open(MODEL_PATH, "rb") as file:
-    model = pickle.load(file)
 
 st.title("📩 Spam Email Classifier")
 
 st.write("Enter a message and check if it's Spam or Ham")
+
+# Load model safely
+try:
+    model = joblib.load(MODEL_PATH)
+except Exception as e:
+    st.error(f"Model loading failed: {e}")
+    st.stop()
 
 message = st.text_area("Enter Email Text")
 
